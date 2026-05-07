@@ -1,0 +1,270 @@
+:root {
+  --brand-red: #c24a3f;
+  --brand-red-deep: #9e382f;
+  --ink: #1a1a1a;
+  --muted: #5c5c5c;
+  --paper: #faf9f8;
+  --border: #e8e4e1;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family:
+    "Noto Sans TC",
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Roboto,
+    "PingFang TC",
+    "Microsoft JhengHei",
+    sans-serif;
+  color: var(--ink);
+  background: var(--paper);
+  line-height: 1.6;
+}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  z-index: 999;
+  padding: 0.75rem 1rem;
+  background: var(--brand-red);
+  color: #fff;
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  left: 0.5rem;
+  top: 0.5rem;
+}
+
+.wrap {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+.site-header {
+  background: #fff;
+  border-bottom: 3px solid var(--brand-red);
+  box-shadow: 0 1px 0 var(--border);
+}
+
+.header-inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0;
+}
+
+.logo-wrap img {
+  display: block;
+  height: clamp(78px, 12vw, 118px);
+  width: auto;
+}
+
+.header-contact {
+  text-align: right;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.header-contact strong {
+  color: var(--ink);
+}
+
+.hero {
+  padding: 2.75rem 0 2rem;
+}
+
+.hero h1 {
+  margin: 0 0 0.5rem;
+  font-size: clamp(1.65rem, 4vw, 2.35rem);
+  font-weight: 700;
+}
+
+.hero-en {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.05rem;
+}
+
+main {
+  padding-bottom: 3rem;
+}
+
+.section-title {
+  margin: 0 0 1.25rem;
+  font-size: 1.35rem;
+  font-weight: 700;
+  padding-bottom: 0.35rem;
+  border-bottom: 2px solid var(--brand-red);
+  display: inline-block;
+}
+
+.section-title--flush {
+  margin-bottom: 1rem;
+}
+
+.catalog-grid {
+  display: grid;
+  gap: 1.75rem;
+}
+
+@media (min-width: 720px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+.product-card {
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow 0.2s ease;
+}
+
+.product-card:focus-within,
+.product-card:hover {
+  box-shadow: 0 10px 30px rgb(26 26 26 / 0.08);
+}
+
+.product-photo {
+  margin: 0;
+  aspect-ratio: 4 / 3;
+  background: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border);
+}
+
+.product-photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.product-body {
+  padding: 1.15rem 1.35rem 1.35rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.model {
+  margin: 0 0 0.35rem;
+  font-family: ui-monospace, "Cascadia Code", monospace;
+  font-size: 0.8rem;
+  color: var(--brand-red-deep);
+}
+
+.product-body h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.125rem;
+  line-height: 1.35;
+}
+
+.product-subtitle {
+  margin: 0 0 1rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.detail-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.93rem;
+  color: var(--muted);
+}
+
+.detail-list li {
+  padding: 0.35rem 0;
+  border-top: 1px solid var(--border);
+}
+
+.detail-list li:first-child {
+  border-top: none;
+}
+
+.detail-label {
+  font-weight: 600;
+  color: var(--ink);
+  display: inline-block;
+  min-width: 8.5rem;
+}
+
+.info-section {
+  margin-top: 2.5rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.35rem 1.5rem;
+}
+
+.info-section .detail-list {
+  margin: 0;
+}
+
+.site-footer {
+  background: var(--ink);
+  color: #e8e4e1;
+  padding: 2rem 0;
+  margin-top: 2rem;
+  font-size: 0.88rem;
+}
+
+.site-footer .wrap {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 720px) {
+  .site-footer .wrap {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.footer-block h4 {
+  margin: 0 0 0.5rem;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: rgb(232 228 225 / 0.75);
+}
+
+.footer-block address {
+  font-style: normal;
+  margin: 0;
+  color: rgb(248 246 245 / 0.95);
+  line-height: 1.7;
+}
+
+.footer-block a {
+  color: rgb(251 226 219);
+}
+
+.footer-meta {
+  font-size: 0.78rem;
+  color: rgb(232 228 225 / 0.55);
+  margin: 0;
+}
